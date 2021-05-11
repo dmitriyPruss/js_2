@@ -5,14 +5,12 @@
     font-family: 'Acme', sans-serif;
     color: white;
 }
-
-body{
+body {
     min-width: 300px;
     height: 100vh;
     background: linear-gradient(rgb(33, 41, 68), rgb(72, 72, 221), rgb(166, 166, 240), rgb(51, 41, 26));
 }
-
-:root{
+:root {
     font-size: 16px;
 }
 h1 {
@@ -32,8 +30,7 @@ article {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
 }
-
-article > div{
+article > div {
     width: 100%;
     height: 100%;
     font-size: 1.5rem;

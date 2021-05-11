@@ -1,4 +1,3 @@
-// 1
 function showIfFor() {
     console.clear();
     // if
@@ -29,6 +28,7 @@ function showIfFor() {
         console.log('');
         isNumberDivisible(120);
     console.groupEnd();
+
     // for
     // 1
     console.groupCollapsed('For - task 1');
@@ -69,7 +69,6 @@ function showIfFor() {
     console.groupEnd();
 };
 
-// 2
 function showFunctions() {
     console.clear();
     // 0
@@ -81,7 +80,6 @@ function showFunctions() {
             return age >= 18 ? true : false;
         };
     console.groupEnd();
-
     // 1
     console.group('functions - task 1');
         const giveNumber = function() {
@@ -91,7 +89,6 @@ function showFunctions() {
             };
             return 1;
         };
-
         const isPrimeNumber = function() {
             const num = giveNumber();
             let i = 2;
@@ -105,7 +102,6 @@ function showFunctions() {
         };
         console.log('isPrimeNumber(2) :>> ', isPrimeNumber());
     console.groupEnd();
-
     // 2
     console.groupCollapsed('functions - task 2');
         console.log('checkMultiplicity(25, 5) :>> ', checkMultiplicity(25, 5));
@@ -123,7 +119,6 @@ function showFunctions() {
             return a % b === 0 ? true : false;
         };
     console.groupEnd();
-
     // 3
     console.groupCollapsed('functions - task 3');
         isTriangle(5, 5, 7);
@@ -143,7 +138,6 @@ function showFunctions() {
             }
         };
     console.groupEnd();
-
     // 4
     console.groupCollapsed('functions - task 4');
         console.log('calculateTriangleArea(5, 7, 8) :>> ', calculateTriangleArea(5, 7, 8));
@@ -174,10 +168,8 @@ function showFunctions() {
     console.groupEnd();
 };
 
-// 3
 function showObjects() {
     console.clear();
-
     // 1
     console.groupCollapsed('Objects - task 1');
         const studentAlex = {
