@@ -1,9 +1,9 @@
 function showIfFor() {
     console.clear();
+
     // if
     // 1) Делится ли число на 5, или на 3, или на 2 без остатка?
     console.groupCollapsed('If - task');
-
         /**
          * 
          * @param {number} num 
@@ -12,22 +12,19 @@ function showIfFor() {
             if (num % 5 === 0) {
                 console.log('without a remainder');
             } else {
-                const remainder = num % 5;
-                console.log(`with a remainder ${remainder}`);
+                console.log(`with a remainder ${num % 5}`);
             };
 
             if (num % 3 === 0) {
                 console.log('without a remainder');
             } else {
-                const remainder = num % 3;
-                console.log(`with a remainder ${remainder}`);
+                console.log(`with a remainder ${num % 3}`);
             };
 
             if (num % 2 === 0) {
                 console.log('without a remainder');
             } else {
-                const remainder = num % 2;
-                console.log(`with a remainder ${remainder}`);
+                console.log(`with a remainder ${num % 2}`);
             };
         };
         isNumberDivisible(5);
@@ -38,15 +35,14 @@ function showIfFor() {
     // for
     // 1) Вывести факториал запрошенного числа. (5!=1*2*3*4*5)
     console.groupCollapsed('For - task 1');
-
         /**
          * 
-         * @param {number} n 
+         * @param {number} n - an integer number
          * @returns {number} a factorial of number
          */
         const showFactorial = function(n) {
             let res = 1;
-            for(let i = 1; i <= n; i++) {
+            for (let i = 1; i <= n; i++) {
                 res *= i;
             };
             return res;
@@ -56,16 +52,15 @@ function showIfFor() {
     
     // 2) *вычислить сумму первых N элементов последовательности 1 + 1/2 + 1/3 + ...+ 1/N . параметр N задает пользователь
     console.group('For - task 2');
-
         /**
          * 
-         * @returns {number} sum of some elements
+         * @returns {number} a sum of some elements
          */
         const showSequence = function() {
             const n = Number(prompt('Enter an integer number, please', 1));
             let res = 1;
-            for(let i = 1; i <= n; i++) {
-                if(n === 1) {
+            for (let i = 1; i <= n; i++) {
+                if (n === 1) {
                     break;
                 };
                 res += 1 / i;
@@ -81,11 +76,11 @@ function showIfFor() {
          * 
          * @param {number} lim1 
          * @param {number} lim2 
-         * @returns {number} multiply of integers
+         * @returns {number} a multiply of integers
          */
         const multiplySequence = function(lim1, lim2) {
             let res = lim1;
-            for(let i = ++lim1; i <= lim2; i++) {
+            for (let i = ++lim1; i <= lim2; i++) {
                 res *= i;
             };
             return res;
@@ -96,6 +91,7 @@ function showIfFor() {
 
 function showFunctions() {
     console.clear();
+
     // 0) Создать функцию isAdult, которая будет проверять возраст пользователя на совершеннолетие.
     // Ожидаемый вывод:
     // isAdult(20); // true
@@ -103,7 +99,6 @@ function showFunctions() {
     console.groupCollapsed('functions - task 0');
         console.log('isAdult(20) :>> ', isAdult(20));// true
         console.log('isAdult(4) :>> ', isAdult(4));; // false
-        console.log('isAdult(18) :>> ', isAdult(18));; // false
         /**
          * 
          * @param {number} age 
@@ -127,6 +122,7 @@ function showFunctions() {
             };
             return 1;
         };
+
         /**
          * 
          * @returns {string} is a number prime or not
@@ -134,15 +130,15 @@ function showFunctions() {
         const isPrimeNumber = function() {
             const num = giveNumber();
             let i = 2;
-            while(i <= num - 1) {
-                if(num % i === 0) {
+            while (i <= num - 1) {
+                if (num % i === 0) {
                     return num + ' isn`t a prime number'; 
                 };
                 i++;
             }; 
             return num + ' is a prime number';
         };
-        console.log('isPrimeNumber(2) :>> ', isPrimeNumber());
+        console.log('isPrimeNumber() :>> ', isPrimeNumber());
     console.groupEnd();
 
     // 2) Создать функцию checkMultiplicity, которая принимает два числа и проверяет, делится ли первое на второе:
@@ -151,7 +147,6 @@ function showFunctions() {
         console.log('checkMultiplicity(15, 3) :>> ', checkMultiplicity(15, 3));
         console.log('checkMultiplicity(15, 5) :>> ', checkMultiplicity(15, 5));
         console.log('checkMultiplicity(15, 4) :>> ', checkMultiplicity(15, 4));
-
         /**
          * 
          * @param {number} a 
@@ -167,7 +162,6 @@ function showFunctions() {
     console.groupCollapsed('functions - task 3');
         isTriangle(5, 5, 7);
         isTriangle(3, 3, 6);
-        
         /**
          * 
          * @param {number} a 
@@ -175,11 +169,11 @@ function showFunctions() {
          * @param {number} c 
          */
         function isTriangle(a, b, c) {
-            if(a + b > c && a + c > b && b + c > a) {
+            if (a + b > c && a + c > b && b + c > a) {
                 console.log('It is the triangle');
             } else {
                 console.log('It isn`t the triangle');
-            }
+            };
         };
     console.groupEnd();
 
@@ -242,17 +236,15 @@ function showFunctions() {
 
 function showObjects() {
     console.clear();
+
     // 1. создать объект Student который содержит следующие свойства: имя, фамилию, пол, контактные
     //  данные, методы: вывод адреса, смена пола.
     console.groupCollapsed('Objects - task 1');
-        const studentAlex = {
-            name: 'Alex',
+        const studentAlexi = {
+            name: 'Alexi',
             surname: 'Johnson',
             gender: 'female',
             contactDetails: 'France, Paris, Main str., 22',
-            showAddress() {
-                return this.contactDetails;
-            },
             changeGender() {
                 return this.gender = 'male'; 
             },
@@ -262,27 +254,23 @@ function showObjects() {
             surname: 'Bubu',
             gender: 'female',
             contactDetails: 'Mexico, Gvadalahara, Maya str., 2012',
-            showAddress() {
-                return this.contactDetails;
-            },
             changeGender() {
                 return this.gender = 'male'; 
             },
         };
-        console.log('student.showAddress() :>> ', studentAlex.showAddress());
-        console.log('student.changeGender() :>> ', studentAlex.changeGender());
-        console.log('student.showAddress() :>> ', studentAnn.showAddress());
-        console.log('student.changeGender() :>> ', studentAnn.changeGender());
+        console.log('studentAlexi.changeGender() :>> ', studentAlexi.changeGender());
+        console.log('studentAnn.changeGender() :>> ', studentAnn.changeGender());
 
-        const studentInfoAlex = showStudentInfo.bind(studentAlex);
-        const studentInfoAnn = showStudentInfo.bind(studentAnn);
-        console.log('studentInfo(studentAlex) :>> ', studentInfoAlex(studentAlex));
-        console.log('studentInfo(studentAnn) :>> ', studentInfoAnn(studentAnn));
+        const studentInfoAlexi = showAddress.bind(studentAlexi);
+        const studentInfoAnn = showAddress.bind(studentAnn);
+        console.log('studentInfoAlexi() :>> ', studentInfoAlexi());
+        console.log('studentInfoAnn() :>> ', studentInfoAnn());
 
-        function showStudentInfo() {
-            return `${this.name} ${this.surname}, ${this.contactDetails}`; 
+        function showAddress() {
+            return `${this.name} ${this.surname} - ${this.contactDetails}`; 
         };
     console.groupEnd();
+
     // 2. создать объект, который содержит свойства, о факультете и кафедре, методы: перевод на 
     // другой факультет. (можно на свой выбор)
     console.groupCollapsed('Objects - task 2');
@@ -290,10 +278,10 @@ function showObjects() {
             faculty: 'nuclear experiments',
             department: 'chemistry',
             students: {},
-            addStudent(name) {
-                const studentName = name.name || `Student N ${Math.round(Math.random() * Math.pow(10, 3))}`;
-                const studentSurname = name.surname || '';
-                this.students[`${studentName} ${studentSurname}`] = name;
+            addStudent(obj) {
+                const studentName = obj.name || `Student N ${Math.round(Math.random() * Math.pow(10, 3))}`;
+                const studentSurname = obj.surname || '#';
+                this.students[`${studentName} ${studentSurname}`] = obj;
             },
             removeStudent(name) {
                 delete this.students[name];
@@ -303,12 +291,13 @@ function showObjects() {
             },
         };
         console.log('university.changeFaculty() :>> ', university.changeFaculty());
-        university.addStudent(studentAlex);
+        university.addStudent(studentAlexi);
         university.addStudent(studentAnn);
         console.log('university.students :>> ', university.students);
-        university.removeStudent('Alex Johnson');
+        university.removeStudent('Alexi Johnson');
         console.log('university.students :>> ', university.students);
     console.groupEnd();
+
     // 3. Создать функции-конструкторы:
     // - Книга (автор, название, год издания, издательство)
     // - Электронная версия книги (автор, название, год издания, издательство, формат, электронный
@@ -325,7 +314,7 @@ function showObjects() {
          * @param {string} name 
          * @param {number} year 
          * @param {string} publishingHouse 
-         * @constructs Object
+         * @constructs PaperBook
          */
         function PaperBook(author, name, year, publishingHouse) {
             this.author = author;
@@ -342,7 +331,7 @@ function showObjects() {
          * @param {string} publishingHouse 
          * @param {string} format 
          * @param {string} electronicNumber 
-         * @constructs Object
+         * @constructs ElectronicBook
          */
         function ElectronicBook(author, name, year, publishingHouse, format, electronicNumber) {
             PaperBook.call(this, author, name, year, publishingHouse);
