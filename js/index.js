@@ -58,16 +58,13 @@ function showIfFor() {
          */
         const showSequence = function() {
             const n = Number(prompt('Enter an integer number, please', 1));
-            let res = 1;
+            let res = 0;
             for (let i = 1; i <= n; i++) {
-                if (n === 1) {
-                    break;
-                };
                 res += 1 / i;
             };
             return res;
         };
-        console.log('Math.round(showSequence()) :>> ', Math.round(showSequence()) );
+        console.log('showSequence() :>> ', showSequence());
     console.groupEnd();
 
     // 3) Найти произведение целых чисел в пределах от lim1 до lim2 (например, если lim1=5 и lim2=12 то это произведение всех чисел от 5 до 12).
@@ -79,13 +76,13 @@ function showIfFor() {
          * @returns {number} a multiply of integers
          */
         const multiplySequence = function(lim1, lim2) {
-            let res = lim1;
-            for (let i = ++lim1; i <= lim2; i++) {
+            let res = 0;
+            for (let i = lim1; i <= lim2; i++) {
                 res *= i;
             };
             return res;
         };
-        console.log('multiplySequence(3, 8) :>> ', multiplySequence(3, 8));
+        console.log('multiplySequence(2, 4) :>> ', multiplySequence(2, 4));
     console.groupEnd();
 };
 
@@ -160,19 +157,29 @@ function showFunctions() {
 
     // 3) Проверка возможности треугольника. Создать функцию которая принимает длины треугольника; функция возвращает true если треугольник возможен и false если нет
     console.groupCollapsed('functions - task 3');
-        isTriangle(5, 5, 7);
-        isTriangle(3, 3, 6);
+        console.log('isTriangle() :>> ', isTriangle());
+
         /**
          * 
-         * @param {number} a 
-         * @param {number} b 
-         * @param {number} c 
+         * @returns {number[]} an array of three sides of a triangle
          */
-        function isTriangle(a, b, c) {
+        function getTriangleSides() {
+            const a = +prompt('side a');
+            const b = +prompt('side b');
+            const c = +prompt('side c');
+            return [a, b, c];
+        };
+
+        /**
+         * 
+         * @returns {boolean} is a triangle true or false
+         */
+        function isTriangle() {
+            const [a, b, c] = getTriangleSides();
             if (a + b > c && a + c > b && b + c > a) {
-                console.log('It is the triangle');
+                return true;
             } else {
-                console.log('It isn`t the triangle');
+                return false;
             };
         };
     console.groupEnd();
@@ -245,8 +252,8 @@ function showObjects() {
             surname: 'Johnson',
             gender: 'female',
             contactDetails: 'France, Paris, Main str., 22',
-            changeGender() {
-                return this.gender = 'male'; 
+            changeGender(genderName) {
+                return this.gender = genderName; 
             },
         };
         const studentAnn = {
@@ -254,12 +261,12 @@ function showObjects() {
             surname: 'Bubu',
             gender: 'female',
             contactDetails: 'Mexico, Gvadalahara, Maya str., 2012',
-            changeGender() {
-                return this.gender = 'male'; 
+            changeGender(genderName) {
+                return this.gender = genderName; 
             },
         };
-        console.log('studentAlexi.changeGender() :>> ', studentAlexi.changeGender());
-        console.log('studentAnn.changeGender() :>> ', studentAnn.changeGender());
+        console.log('studentAlexi.changeGender("male") :>> ', studentAlexi.changeGender("male"));
+        console.log('studentAnn.changeGender("male") :>> ', studentAnn.changeGender("male"));
 
         const studentInfoAlexi = showAddress.bind(studentAlexi);
         const studentInfoAnn = showAddress.bind(studentAnn);
@@ -286,11 +293,11 @@ function showObjects() {
             removeStudent(name) {
                 delete this.students[name];
             },
-            changeFaculty() {
-                return this.faculty = 'UFO searching';
+            changeFaculty(facultyName) {
+                return this.faculty = facultyName;
             },
         };
-        console.log('university.changeFaculty() :>> ', university.changeFaculty());
+        console.log('university.changeFaculty("UFO searching") :>> ', university.changeFaculty("UFO searching"));
         university.addStudent(studentAlexi);
         university.addStudent(studentAnn);
         console.log('university.students :>> ', university.students);
