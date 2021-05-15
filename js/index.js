@@ -76,13 +76,13 @@ function showIfFor() {
          * @returns {number} a multiply of integers
          */
         const multiplySequence = function(lim1, lim2) {
-            let res = 0;
+            let res = 1;
             for (let i = lim1; i <= lim2; i++) {
                 res *= i;
             };
             return res;
         };
-        console.log('multiplySequence(2, 4) :>> ', multiplySequence(2, 4));
+        console.log('multiplySequence(5, 12) :>> ', multiplySequence(5, 12));
     console.groupEnd();
 };
 
@@ -102,7 +102,7 @@ function showFunctions() {
          * @returns {boolean} is age > or < 18
          */
         function isAdult(age) {
-            return age >= 18 ? true : false;
+            return age >= 18;
         };
     console.groupEnd();
 
@@ -151,7 +151,7 @@ function showFunctions() {
          * @returns {boolean} is a remainder of a division
          */
         function checkMultiplicity(a, b) {
-            return a % b === 0 ? true : false;
+            return a % b === 0;
         };
     console.groupEnd();
 
